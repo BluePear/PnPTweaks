@@ -10,10 +10,15 @@ This mod has five optional components:
    (Cause Serious/Critical Wounds) to heal their 2e ADnD amount.
    
    Cure Light Wounds: 1d8
+   
    Cure Medium Wounds: 1d10+1
+   
    Cure Serious Wounds: 2d8+1
+   
    Cause Serious Wounds: 2d8+1
+   
    Cure Critical Wounds: 3d8+3
+   
    Cause Critical Wounds: 3d8+3
 
 2) PnP Healing Potions
