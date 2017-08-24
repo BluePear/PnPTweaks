@@ -9,10 +9,8 @@ This mod has five optional components:
    This component changes all healing spells and their opposites 
    (Cause Serious/Critical Wounds) to heal their 2e ADnD amount.
    
-   Cure Light Wounds: 1d8
-   
+   Cure Light Wounds: 1d8   
    Cure Medium Wounds: 1d10+1
-   
    Cure Serious Wounds: 2d8+1
    
    Cause Serious Wounds: 2d8+1
