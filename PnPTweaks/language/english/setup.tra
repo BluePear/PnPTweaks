@@ -1,0 +1,20 @@
+@1=~PnP Healing Spells~
+@2=~PnP Healing Potions~
+@3=~Increased Raise Dead cost at temples~
+@4=~PnP-ish Identify Spell~
+@5=~Identify
+(Divination)
+
+Level: 1
+Range: 0
+Duration: 2 rounds
+Casting Time: 9
+Area of Effect: The caster
+Saving Throw: None
+
+When this spell is cast, it increases the caster's lore by 20 +5 per level for 2 rounds. Since the spell is extremely exhausting, the caster loses 8 points of constitution which are regained gradually over the course of 16 hours. If this spell drops the caster's constitution below 1, they will die. Exceptionally tough casters can use this spell twice in order to double the effect.~
+@6=~Increase identify cost in stores~
+@7=~double the cost~
+@8=~triple the cost (recommended)~
+@9=~quintuple the cost~
+@10=~This component is only avaible for BGEE and BG2EE~
