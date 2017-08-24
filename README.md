@@ -20,18 +20,18 @@ This mod has five optional components:
    This component changes Potion of Healing and Potion of Extra
    Healing to heal for their 2e ADnD amount.
 
-   Potion of Healing: 2d4+2
+   Potion of Healing: 2d4+2   
    Potion of Extra Healing: 3d8+3
    
 3) Increase Raise Dead cost at temples
    This component changes the gold cost of a Raise Dead spell in 
    all temples to 800 + 200 per level.
    
-   Level 1: 1000
-   Level 2: 1200
-   Level 3: 1400
-   Level 4: 1600
-   Level 5: 1800
+   Level 1: 1000   
+   Level 2: 1200   
+   Level 3: 1400   
+   Level 4: 1600   
+   Level 5: 1800   
    ...
 
 4) PnP Identify
