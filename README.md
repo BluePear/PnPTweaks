@@ -44,11 +44,11 @@ This mod has five optional components:
    "Identify
    (Divination)
 
-   Level: 1
-   Range: 0
-   Duration: 2 rounds
-   Casting Time: 9
-   Area of Effect: The caster
+   Level: 1   
+   Range: 0   
+   Duration: 2 rounds   
+   Casting Time: 9   
+   Area of Effect: The caster   
    Saving Throw: None
 
    When this spell is cast, it increases the caster's lore by 
