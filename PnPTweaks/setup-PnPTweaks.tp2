@@ -1,7 +1,7 @@
 BACKUP ~PnPTweaks/backup~
 AUTHOR ~BluePear~
 
-VERSION ~v1.0~
+VERSION ~v1.01~
 
 README ~PnPTweaks/readme-PnPTweaks.txt~
 
@@ -36,11 +36,19 @@ REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~ @10
         END
         BUT_ONLY
 
+     ACTION_IF GAME_IS ~bgee~ THEN BEGIN
         ACTION_GET_STRREF 25809 SPPR103desc
         OUTER_PATCH_SAVE SPPR103desc ~%SPPR103desc%~ BEGIN
         REPLACE_TEXTUALLY ~8 points~ ~1d8 points~
         END
         STRING_SET_EVALUATE 25809 ~%SPPR103desc%~
+     END ELSE BEGIN
+        ACTION_GET_STRREF 12323 SPPR103desc
+        OUTER_PATCH_SAVE SPPR103desc ~%SPPR103desc%~ BEGIN
+        REPLACE_TEXTUALLY ~8 points~ ~1d8 points~
+        END
+        STRING_SET_EVALUATE 12323 ~%SPPR103desc%~
+     END
 
 
     COPY_EXISTING ~SPPR315.spl~ ~override~
@@ -62,13 +70,20 @@ REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~ @10
           END
         END
         BUT_ONLY
-        
+
+     ACTION_IF GAME_IS ~bgee~ THEN BEGIN
         ACTION_GET_STRREF 26192 SPPR315desc
         OUTER_PATCH_SAVE SPPR315desc ~%SPPR315desc%~ BEGIN
         REPLACE_TEXTUALLY ~14 points~ ~1d10+1 points~
         END
         STRING_SET_EVALUATE 26192 ~%SPPR315desc%~
-
+     END ELSE BEGIN
+        ACTION_GET_STRREF 3807 SPPR315desc
+        OUTER_PATCH_SAVE SPPR315desc ~%SPPR315desc%~ BEGIN
+        REPLACE_TEXTUALLY ~14 points~ ~1d10+1 points~
+        END
+        STRING_SET_EVALUATE 3807 ~%SPPR315desc%~
+     END
 
     COPY_EXISTING ~SPPR401.spl~ ~override~
         READ_LONG  0x64 "abil_off"
@@ -90,19 +105,33 @@ REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~ @10
         END
         BUT_ONLY
 
+     ACTION_IF GAME_IS ~bgee~ THEN BEGIN
         ACTION_GET_STRREF 26093 SPPR401desc
         OUTER_PATCH_SAVE SPPR401desc ~%SPPR401desc%~ BEGIN
         REPLACE_TEXTUALLY ~17 points~ ~2d8+1 points~
         END
         STRING_SET_EVALUATE 26093 ~%SPPR401desc%~
-      
-
-     ACTION_GET_STRREF 26221 SPPR414desc
-     OUTER_PATCH_SAVE SPPR414desc ~%SPPR414desc%~ BEGIN
-     REPLACE_TEXTUALLY ~17 points~ ~2d8+1 points~
+     END ELSE BEGIN
+        ACTION_GET_STRREF 12325 SPPR401desc
+        OUTER_PATCH_SAVE SPPR401desc ~%SPPR401desc%~ BEGIN
+        REPLACE_TEXTUALLY ~17 points~ ~2d8+1 points~
+        END
+        STRING_SET_EVALUATE 12325 ~%SPPR401desc%~
      END
-     STRING_SET_EVALUATE 26221 ~%SPPR414desc%~
 
+     ACTION_IF GAME_IS ~bgee~ THEN BEGIN
+        ACTION_GET_STRREF 26221 SPPR414desc
+        OUTER_PATCH_SAVE SPPR414desc ~%SPPR414desc%~ BEGIN
+        REPLACE_TEXTUALLY ~17 points~ ~2d8+1 points~
+        END
+        STRING_SET_EVALUATE 26221 ~%SPPR414desc%~
+     END ELSE BEGIN
+        ACTION_GET_STRREF 11185 SPPR414desc
+        OUTER_PATCH_SAVE SPPR414desc ~%SPPR414desc%~ BEGIN
+        REPLACE_TEXTUALLY ~17 points~ ~2d8+1 points~
+        END
+        STRING_SET_EVALUATE 11185 ~%SPPR414desc%~
+     END
 
      COPY_EXISTING ~SERIOUS.ITM~ ~override~
       READ_LONG 0x64 abil_off
@@ -134,19 +163,34 @@ REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~ @10
         END
         BUT_ONLY
 
-     ACTION_GET_STRREF 26231 SPPR502desc
-     OUTER_PATCH_SAVE SPPR502desc ~%SPPR502desc%~ BEGIN
-     REPLACE_TEXTUALLY ~27 points~ ~3d8+3 points~
+     ACTION_IF GAME_IS ~bgee~ THEN BEGIN
+       ACTION_GET_STRREF 26231 SPPR502desc
+       OUTER_PATCH_SAVE SPPR502desc ~%SPPR502desc%~ BEGIN
+       REPLACE_TEXTUALLY ~27 points~ ~3d8+3 points~
+       END
+       STRING_SET_EVALUATE 26231 ~%SPPR502desc%~
+     END ELSE BEGIN
+       ACTION_GET_STRREF 18729 SPPR502desc
+       OUTER_PATCH_SAVE SPPR502desc ~%SPPR502desc%~ BEGIN
+       REPLACE_TEXTUALLY ~27 points~ ~3d8+3 points~
+       END
+       STRING_SET_EVALUATE 18729 ~%SPPR502desc%~
      END
-     STRING_SET_EVALUATE 26231 ~%SPPR502desc%~
 
-
-     ACTION_GET_STRREF 26244 SPPR510desc
-     OUTER_PATCH_SAVE SPPR510desc ~%SPPR510desc%~ BEGIN
-     REPLACE_TEXTUALLY ~27 points~ ~3d8+3 points~
+     ACTION_IF GAME_IS ~bgee~ THEN BEGIN
+       ACTION_GET_STRREF 26244 SPPR510desc
+       OUTER_PATCH_SAVE SPPR510desc ~%SPPR510desc%~ BEGIN
+       REPLACE_TEXTUALLY ~27 points~ ~3d8+3 points~
+       END
+       STRING_SET_EVALUATE 26244 ~%SPPR510desc%~
+     END ELSE BEGIN
+       ACTION_GET_STRREF 11194 SPPR510desc
+       OUTER_PATCH_SAVE SPPR510desc ~%SPPR510desc%~ BEGIN
+       REPLACE_TEXTUALLY ~27 points~ ~3d8+3 points~
+       END
+       STRING_SET_EVALUATE 11194 ~%SPPR510desc%~
      END
-     STRING_SET_EVALUATE 26244 ~%SPPR510desc%~
-     
+
      COPY_EXISTING ~CRITICAL.ITM~ ~override~
       READ_LONG 0x64 abil_off
       READ_SHORT 0x68 abil_num
@@ -155,7 +199,7 @@ REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~ @10
       WRITE_LONG (%fx_off% + 0x4) 3 //param1
       WRITE_LONG (%fx_off% + 0x1c) 3 //#dice, maxlevel
       WRITE_LONG (%fx_off% + 0x20) 8 //dicesize, minlevel
-          
+
 BEGIN @2 // PnP Healing Potions
 REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~ @10
      COPY_EXISTING ~POTN52.ITM~ ~override~
@@ -244,51 +288,11 @@ REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~ @10
      COPY_EXISTING ~ITEMSPEC.2da~ ~override~
         SET_2DA_ENTRY 1 0 2 "0" // SCRL75
         SET_2DA_ENTRY 1 1 2 "0" // SCRL75
-        
-     COPY_EXISTING ~DYNAHE7.cre~ ~override~
-         REMOVE_KNOWN_SPELL ~SPWI110~
-         REMOVE_MEMORIZED_SPELL ~SPWI110~
-         ADD_KNOWN_SPELL ~SPWI109~ #0 ~wizard~
-         ADD_MEMORIZED_SPELL ~SPWI109~ #0 ~wizard~ ( 1 )
 
-     COPY_EXISTING ~TTXAN.cre~ ~override~
-         REMOVE_KNOWN_SPELL ~SPWI110~
-         REMOVE_MEMORIZED_SPELL ~SPWI110~
-         ADD_KNOWN_SPELL ~SPWI109~ #0 ~wizard~
-         ADD_MEMORIZED_SPELL ~SPWI109~ #0 ~wizard~ ( 2 )
+     COPY_EXISTING_REGEXP GLOB ~^.+\.cre~ override
+      REPLACE_TEXTUALLY ~SPWI110~ ~SPWI109~
+     BUT_ONLY
 
-     COPY_EXISTING ~NEERA.cre~ ~override~
-         REMOVE_KNOWN_SPELL ~SPWI110~
-         ADD_KNOWN_SPELL ~SPWI109~ #0 ~wizard~
-     COPY_EXISTING ~NEERA2.cre~ ~override~
-         REMOVE_KNOWN_SPELL ~SPWI110~
-         ADD_KNOWN_SPELL ~SPWI109~ #0 ~wizard~
-     COPY_EXISTING ~NEERA4.cre~ ~override~
-         REMOVE_KNOWN_SPELL ~SPWI110~
-         ADD_KNOWN_SPELL ~SPWI109~ #0 ~wizard~
-     COPY_EXISTING ~NEERA6.cre~ ~override~
-         REMOVE_KNOWN_SPELL ~SPWI110~
-         ADD_KNOWN_SPELL ~SPWI109~ #0 ~wizard~
-     COPY_EXISTING ~NEERA7.cre~ ~override~
-         REMOVE_KNOWN_SPELL ~SPWI110~
-         ADD_KNOWN_SPELL ~SPWI109~ #0 ~wizard~
-     
-     COPY_EXISTING ~BAELOT7.cre~ ~override~
-         REMOVE_KNOWN_SPELL ~SPWI110~
-         REMOVE_MEMORIZED_SPELL ~SPWI110~
-         ADD_KNOWN_SPELL ~SPWI109~ #0 ~wizard~
-         ADD_MEMORIZED_SPELL ~SPWI109~ #0 ~wizard~ ( 6 )
-
-     COPY_EXISTING ~BAELOTH.cre~ ~override~
-         REMOVE_KNOWN_SPELL ~SPWI110~
-         REMOVE_MEMORIZED_SPELL ~SPWI110~
-         ADD_KNOWN_SPELL ~SPWI109~ #0 ~wizard~
-         ADD_MEMORIZED_SPELL ~SPWI109~ #0 ~wizard~ ( 6 )
-
-     COPY_EXISTING ~VOGHIL7.cre~ ~override~
-         REMOVE_KNOWN_SPELL ~SPWI110~
-         ADD_KNOWN_SPELL ~SPWI109~ #0 ~wizard~
-     
      COPY_EXISTING ~SPLAUTOP.2da~ ~override~
          REPLACE_TEXTUALLY ~SPWI110~ ~SPWI109~
 
@@ -307,15 +311,18 @@ SUBCOMPONENT @6 //Increase Identify Cost
       COPY_EXISTING_REGEXP GLOB ~^.+\.sto$~ ~override~
        READ_LONG 0x40 idcost
        WRITE_LONG 0x40 (idcost * 2) // Identify price
+      BUT_ONLY
 BEGIN @8
 REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~ @10
 SUBCOMPONENT @6 //Increase Identify Cost
       COPY_EXISTING_REGEXP GLOB ~^.+\.sto$~ ~override~
        READ_LONG 0x40 idcost
        WRITE_LONG 0x40 (idcost * 3) // Identify price
+      BUT_ONLY
 BEGIN @9
 REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~ @10
 SUBCOMPONENT @6 //Increase Identify Cost
       COPY_EXISTING_REGEXP GLOB ~^.+\.sto$~ ~override~
        READ_LONG 0x40 idcost
        WRITE_LONG 0x40 (idcost * 5) // Identify price
+      BUT_ONLY
