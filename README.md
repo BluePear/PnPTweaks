@@ -1,7 +1,7 @@
 # PnPTweaks
-A mod for Baldur's Gate: Enhanced Edition
+A mod for BGEE and BG2EE
 
-v1.0
+v1.01
 
 This mod has five optional components:
 
@@ -68,11 +68,14 @@ This mod has five optional components:
    This component has three options:
    - double the cost
    - triple the cost
-   - quadruple the cost
+   - quintuple the cost
 
 
 
 Version History
+
+v1.01 (2017-08-25)
+  - Added BG2EE compatibility
 
 v1.0 (2017-08-24)
   - Initial release
